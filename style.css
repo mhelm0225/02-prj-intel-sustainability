@@ -1,1 +1,113 @@
 /* Add your CSS here */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+/* Add a medium blue border to the Intel logo image */
+img[src="img/intel-header-logo.svg"] {
+			border: 2px solid #0071c5; /* Thinner blue border */
+			background-color: #0071c5; /* Fill background with same blue */
+			border-radius: 6px; /* Slightly rounded corners */
+				width: 120px; /* Border width remains the same */
+				height: 115px; /* Border height remains the same */
+				padding: 6px; /* Shrink image inside border by 5% (6px of 120px) */
+				box-sizing: border-box; /* Ensure padding is inside border */
+			display: block; /* Make sure it behaves like a block element */
+			margin: 16px 0 0 16px; /* Space from top and left */
+			position: absolute; /* Place at top left */
+			top: 0;
+			left: 0;
+}
+
+/* Center the main header and paragraph in the middle of the page */
+.main-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 40vh; /* Adjust height as needed */
+}
+
+.main-content h1 {
+	margin-bottom: 16px;
+	font-size: 48px; /* Make the main header large */
+	font-weight: 400; /* Decrease boldness */
+	color: #0071c5; /* Medium blue color */
+}
+
+.main-content p {
+	font-size: 18px; /* Make the main paragraph large */
+}
+
+/* Timeline card styles */
+.timeline-container {
+  display: flex; /* Use flexbox to lay out cards in a row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 24px; /* Add some space around the container */
+  gap: 16px; /* Add space between the cards */
+  scroll-snap-type: x mandatory; /* Snap to cards when scrolling */
+}
+
+.timeline-card {
+  border: 0px solid #cccccc; /* Blue border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
+  padding: 24px;
+  width: 300px; /* Set a fixed width for each card */
+  min-height: 340px; /* Increase height for better image fit */
+  text-align: center;
+  flex: 0 0 300px; /* Set a fixed width for each card */
+  scroll-snap-align: start; /* Snap to the start of each card */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken; /* Blend image for better contrast */
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Add smooth transition for scaling */
+}
+
+/* Add a hover effect to scale the card up */
+.timeline-card:hover {
+  transform: scale(1.05); /* Scale up by 5% on hover */
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* 70% opaque dark background */
+  border-radius: 10px;
+  z-index: 1;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Show the dark background on hover */
+.timeline-card:hover::before {
+  opacity: 1;
+}
+
+.timeline-card > * {
+  position: relative;
+  z-index: 2;
+  opacity: 0; /* Hide text by default */
+  transition: opacity 0.3s ease;
+}
+
+/* Show card text on hover */
+.timeline-card:hover > * {
+  opacity: 1;
+}
+.scroll-hint {
+  text-align: center;
+  margin-top: 16px;
+  font-style: italic;
+  color: #666;
+}
+
