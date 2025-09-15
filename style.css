@@ -111,3 +111,35 @@ img[src="img/intel-header-logo.svg"] {
   color: #666;
 }
 
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .main-content h1 {
+    font-size: 32px; /* Smaller font size for the main header */
+    text-align: center; /* Center the text */
+  }
+
+  .main-content p {
+    font-size: 16px; /* Smaller font size for the main paragraph */
+    padding: 0 16px; /* Add some horizontal padding */
+  }
+
+  img[src="img/intel-header-logo.svg"] {
+    width: 80px; /* Smaller logo */
+    height: auto; /* Maintain aspect ratio */
+    margin: 8px 0 0 8px; /* Adjust margin */
+    padding: 4px;
+  }
+
+  .timeline-container {
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    scroll-snap-type: y mandatory; /* Snap vertically */
+    align-items: center; /* Center cards horizontally */
+  }
+
+  .timeline-card {
+    width: 90%; /* Make cards wider on smaller screens */
+    flex: 0 0 auto; /* Allow cards to grow and shrink */
+  }
+}
+
